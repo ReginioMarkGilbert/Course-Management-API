@@ -1,3 +1,19 @@
+
+/**
+ * Application Entry Point
+ * 
+ * This file serves as the entry point for the application, setting up the Express.js server, connecting to a MongoDB database, and defining routes and middleware.
+ * 
+ * Functionality:
+ * - Sets up an Express.js server.
+ * - Connects to a MongoDB database.
+ * - Defines routes for the application.
+ * - Defines middleware for the application, including error handling.
+ * - Starts the server listening for incoming requests.
+ * 
+ * Note: This file assumes the existence of a MongoDB database running locally on the default port (27017) and a collection named "mongo-test".
+ */
+
 const express = require("express");
 const mongoose = require("mongoose");
 const courseRoutes = require("./routes/courseRoutes");
@@ -14,7 +30,6 @@ app.get("/", (res) => {
 
 // Error handling middleware
 app.use(errorHandler);
-
 
 const PORT = 3000;
 app.listen(PORT, () => {

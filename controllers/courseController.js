@@ -1,3 +1,26 @@
+/**
+ * Course Controller
+ * 
+ * This controller module handles operations related to courses, including retrieving, sorting, and selecting course data based on specific criteria.
+ * It interacts with the Course model to fetch course information from the database.
+ * 
+ * Functions:
+ * - `getCourseNamesSortedAlphabetically(res)`: Retrieves all published backend courses and sorts them alphabetically by their names.
+ * - `getCoursesNameAndSpecialization(res)`: Selects and extracts the name and specialization of each course.
+ * - `getPublishedCourses(res)`: Retrieves all published BSIS and BSIT courses from the curriculum.
+ * 
+ * Parameters:
+ * - @res (Response): The HTTP response object used to send data or error messages to the client.
+ * 
+ * Data Validation:
+ * The `validateCourse` function ensures the accuracy of course descriptions and tags.
+ * 
+ * Error Handling:
+ * Each function includes error handling to respond with appropriate HTTP status codes and error messages in case of failures.
+ * 
+ * Note: This controller relies on the Course model for database interactions and data retrieval.
+ */
+
 const Course = require("../models/course");
 
 // Validation helper function
