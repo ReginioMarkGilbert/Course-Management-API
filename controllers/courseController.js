@@ -91,31 +91,18 @@ exports.getCoursesNameAndSpecialization = async (res) => {
     }
 };
 
-// exports.getCoursesNameAndSpecialization = async (res) => {
-//     try {
-//         const courses = await extractCourses();
-//         const courseInfo = courses.map(({ description, tags }) => ({ description, tags }));
-//         res.json(courseInfo);
-//     } catch (error) {
-//         res.status(500).json({ message: error.message });
-//     }
-// };
-
 // Retrieve all published BSIS and BSIT courses from the curriculum.
 // get all courses
 exports.getPublishedCourses = async (res) => {
     try {
-        const courses = await extractCourses(); // get all courses
-        const validatedCourses = courses.filter(course => { // Filter courses
-            const { isValid } = validateCourse(course); // Validate the course
-            return isValid && (course.tags.includes("BSIT") || course.tags.includes("BSIS"));
-        }).map(({ description, tags }) => ({ description, tags }));
-
-        if (validatedCourses.length === 0) { // Check here if no valid courses found
-            throw new Error("No valid courses found");
-        }
-
-        res.json(validatedCourses);
+        const courses = await extractCourses();
+        // Filter courses based on tags "BSIT" or "BSIS"
+        const filteredCourses = courses.filter(course =>
+            // validate if tags if it has BSIT or BSIS before include it in the filtered result
+            course.tags && (course.tags.includes("BSIT") || course.tags.includes("BSIS"))
+            // include code, description, units, and tags
+        ).map(({ code, description, units, tags }) => ({ code, description, units, tags }));
+        res.json(filteredCourses);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
