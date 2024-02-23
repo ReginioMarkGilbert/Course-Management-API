@@ -29,9 +29,7 @@ function validateCourse({ description, tags }) {
     if (typeof description !== 'string' || description.trim() === '') {
         errors.push('Invalid or missing course description.');
     }
-    if (!Array.isArray(tags) || tags.length === 0) {
-        errors.push('Invalid or missing course tags.');
-    }
+
     return {
         isValid: errors.length === 0, // Check if no errors
         errors,
@@ -92,6 +90,16 @@ exports.getCoursesNameAndSpecialization = async (res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+// exports.getCoursesNameAndSpecialization = async (res) => {
+//     try {
+//         const courses = await extractCourses();
+//         const courseInfo = courses.map(({ description, tags }) => ({ description, tags }));
+//         res.json(courseInfo);
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+// };
 
 // Retrieve all published BSIS and BSIT courses from the curriculum.
 // get all courses
