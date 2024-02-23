@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const courseController = require("../controllers/courseController");
 
-router.get("/getCoursesByName", (req, res) => {
-    courseController.getCoursesSortedByName(res);
+router.get("/getCourseNamesSortedAlphabetically", (req, res) => {
+    courseController.getCourseNamesSortedAlphabetically(res);
 });
 
 router.get("/getCoursesNameAndSpecialization", (req, res) => {
