@@ -1,7 +1,7 @@
 {
-  "name": "webrpog2",
+  "name": "course-management-api",
   "version": "1.0.0",
-  "description": "Performance Test Instructions:",
+  "description": "Indivdual Performance Test 1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
