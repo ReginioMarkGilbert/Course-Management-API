@@ -107,6 +107,16 @@ This project uses the following dependencies:
 npm i express
 
 ```
+### 📦 MongoDB
+
+**Version:** ^6.3.0
+
+**Description:** MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+```bash
+npm i mongodb
+
+```
+
 ## 🔧 DevDependencies
 
 ### 🤖 Nodemon
