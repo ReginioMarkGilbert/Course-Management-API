@@ -38,7 +38,7 @@ Follow these steps to set up the application locally:
 1. **Clone the Repository**: Clone the repository to your local machine using Git.
 
 ```bash
-git clone https://github.com/your-repo-url
+git clone https://github.com/ReginioMarkGilbert/Course-Management-API.git
 ```
 
 2. **Install Dependencies**: Install required dependencies using [npm](https://www.npmjs.com/).
